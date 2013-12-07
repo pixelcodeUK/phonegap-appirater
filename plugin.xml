@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="com.pixelcode.phonegap.appirater" version="0.0.1">
+    <name>Appirater Plugin</name>
+    <author>Pixelcode (http://pixelcode.co.uk/)</author>
+    <description>Cordova plugin to use the Appirater iOS dialog.</description>
+    <keywords>cordova, appirater</keywords>
+    <license>MIT License</license>
+    <engines>
+        <engine name="cordova" version=">=3.0" />
+    </engines>
+    <js-module src="www/appirater.js" name="CDVPluginAppirater">
+        <clobbers target="window.CDVPluginAppirater" />
+    </js-module>
+    <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <feature name="CDVPluginAppirater">
+                <param name="ios-package" value="CDVPluginAppirater" />
+            </feature>
+        </config-file>
+        <header-file src="src/ios/CDVPluginAppirater.h" />
+        <source-file src="src/ios/CDVPluginAppirater.m" />
+    </platform>
+</plugin>
